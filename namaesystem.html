@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffd6e8, #c7eaff, #e3ffd9);
+            background-size: 300% 300%;
+            animation: bgmove 12s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes bgmove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .login-box {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 18px;
+            font-size: 28px;
+            color: #567c8d;
+            font-weight: 600;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border: 1.5px solid #c5d9e2;
+            background: #f6fbff;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .login-box input:focus {
+            border-color: #a2d2ff;
+            outline: none;
+            box-shadow: 0 0 6px rgba(162,210,255,0.6);
+        }
+
+        .btn {
+            width: 48%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .login-btn {
+            background-color: #a4c3ff;
+            color: white;
+        }
+
+        .cancel-btn {
+            background-color: #ffb3c6;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.08);
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h2>Welcome Back 💗</h2>
+
+        <input type="text" placeholder="Enter Username" id="username">
+        <input type="password" placeholder="Enter Password" id="password">
+
+        <div class="button-row">
+            <button class="btn login-btn" id="loginBtn">Login</button>
+            <button class="btn cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginBtn").addEventListener("click", function () {
+            window.location.href = "dashboard.html";
+        });
+    </script>
+
+</body>
+</html>

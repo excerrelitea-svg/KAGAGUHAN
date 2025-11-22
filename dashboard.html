@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Computer Lab & Equipment Monitoring</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<style>
+  body {
+    background: linear-gradient(135deg, #ffd6e8, #c7eaff, #e3ffd9);
+    background-size: 300% 300%;
+    animation: bgmove 12s ease infinite;
+    font-family: "Poppins", sans-serif;
+    color: #4b5563;
+  }
+
+  @keyframes bgmove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .sidebar {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    border-right: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .sidebar-link {
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: 0.25s;
+    font-weight: 500;
+  }
+
+  .sidebar-link:hover {
+    background: #ffe0f0;
+    color: #d6336c;
+    transform: translateX(5px);
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
+</style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+<!-- Header -->
+<header class="p-6 shadow-md bg-white bg-opacity-60 backdrop-blur-md">
+  <h1 class="text-3xl font-bold text-pink-600">Computer Lab & Equipment Monitoring</h1>
+  <p class="text-sm text-gray-600 mt-1 italic">RFID Login Active</p>
+</header>
+
+<div class="flex flex-1">
+
+  <!-- Sidebar -->
+  <aside class="sidebar w-64 p-6 flex flex-col space-y-3">
+    <h2 class="text-xl font-semibold text-pink-500 mb-4">Menu</h2>
+
+    <a class="sidebar-link text-gray-700" data-page="home">🏠 Home</a>
+    <a class="sidebar-link text-gray-700" data-page="profile">👤 Profile</a>
+    <a class="sidebar-link text-gray-700" data-page="equipment">💻 Equipment</a>
+    <a class="sidebar-link text-gray-700" data-page="activity">📊 Activity</a>
+    <a class="sidebar-link text-gray-700" data-page="settings">⚙️ Settings</a>
+
+    <!-- Logout -->
+    <a href="namaesystem.html" class="mt-4 text-red-500 font-semibold hover:underline">🚪 Logout</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="content" class="flex-1 p-8 space-y-6">
+
+    <!-- Home -->
+    <div id="home" class="page">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card">
+          <h3 class="text-lg font-semibold mb-2">💻 Total Equipments</h3>
+          <p class="text-2xl font-bold text-pink-600">143</p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-semibold mb-2">🖥️ Available</h3>
+          <p class="text-2xl font-bold text-pink-600">69</p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-semibold mb-2">🛠️ Under Maintenance</h3>
+          <p class="text-2xl font-bold text-pink-600">33</p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-semibold mb-2">📋 Lab Sessions Today</h3>
+          <p class="text-2xl font-bold text-pink-600">12</p>
+        </div>
+      </div>
+
+      <div class="card mt-8">
+        <h3 class="text-lg font-semibold mb-2">🌸 Recent Activity</h3>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Computer #12 checked out by User Mae</li>
+          <li>Projector #3 maintenance scheduled</li>
+          <li>New lab session created for Room 101</li>
+          <li>Printer #2 toner replaced</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div id="profile" class="page hidden">
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-3">👤 Profile</h3>
+        <p><b>Username:</b> Mae</p>
+        <p><b>Role:</b> Lab User</p>
+        <p><b>Email:</b> maedelulu@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- Equipment -->
+    <div id="equipment" class="page hidden">
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-3">💻 Equipment Status</h3>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Computer #1 - Available</li>
+          <li>Computer #2 - In Use</li>
+          <li>Printer #1 - Available</li>
+          <li>Projector #1 - Maintenance</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Activity -->
+    <div id="activity" class="page hidden">
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-3">📊 Lab Activity Logs</h3>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>User Mae logged in at 9:00 AM</li>
+          <li>Computer #12 checked out at 9:30 AM</li>
+          <li>Projector #3 maintenance scheduled at 10:00 AM</li>
+          <li>Printer #2 toner replaced at 11:00 AM</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div id="settings" class="page hidden">
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-3">⚙️ Settings</h3>
+        <p>Customize your pastel theme soon 🌷</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  const links = document.querySelectorAll(".sidebar-link");
+  const pages = document.querySelectorAll(".page");
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      pages.forEach(p => p.classList.add("hidden"));
+      document.getElementById(link.dataset.page).classList.remove("hidden");
+    });
+  });
+</script>
+
+</body>
+</html>
